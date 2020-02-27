@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@loginpage.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginapp.LoginController">
+   <children>
+      <Label alignment="CENTER" layoutX="252.0" layoutY="40.0" prefHeight="93.0" prefWidth="96.0" style="-fx-border-color: #010000; -fx-border-radius: 50px;" text="KN">
+         <font>
+            <Font name="Book Antiqua" size="32.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="218.0" layoutY="145.0" prefHeight="17.0" prefWidth="170.0" text="University of KN">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IDbtn" alignment="CENTER" layoutX="226.0" layoutY="186.0" prefHeight="28.0" prefWidth="157.0" promptText="ID" style="-fx-background-color: white; -fx-background-radius: 50px;" />
+      <PasswordField fx:id="passwordbtn" alignment="CENTER" layoutX="226.0" layoutY="222.0" prefHeight="28.0" prefWidth="157.0" promptText="PASSWORD" style="-fx-background-color: white; -fx-background-radius: 50px; -fx-text-fill: #0D0D0D;" />
+
+      <Label fx:id="dbstatusbtn" alignment="CENTER" layoutY="32.0" prefHeight="20.0" prefWidth="266.0">
+         <font>
+            <Font name="Aldhabi" size="11.0" />
+         </font></Label>
+      <ComboBox fx:id="comboboxbtn" layoutX="227.0" layoutY="259.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="157.0" promptText="TYPE" style="-fx-background-color: WHITE; -fx-background-radius: 50PX;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <opaqueInsets>
+            <Insets left="30.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets left="60.0" />
+         </padding>
+      </ComboBox>
+      <Label fx:id="wrongLoginbtn" alignment="CENTER" layoutX="180.0" layoutY="377.0" prefHeight="17.0" prefWidth="251.0" />
+      <Button fx:id="signinbtn" layoutX="276.0" layoutY="289.0" mnemonicParsing="false" onAction="#Login" styleClass="signinbtn" text="Sign in ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="431.0" layoutY="288.0" prefHeight="18.0" prefWidth="138.0" style="-fx-text-fill: white;" text="Don't have an account?" />
+      <Button layoutX="273.0" layoutY="334.0" mnemonicParsing="false" onAction="#openRegisterPage" styleClass="signinbtn" text="Register">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@Admin.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.AdminController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="203.0" styleClass="loginbox">
+         <children>
+            <Label alignment="CENTER" prefHeight="93.0" prefWidth="96.0" style="-fx-border-color: Black; -fx-border-radius: 50px;" text="KN">
+               <VBox.margin>
+                  <Insets left="51.0" top="9.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Book Antiqua" size="32.0" />
+               </font></Label>
+            <Label prefHeight="26.0" prefWidth="151.0" text="logged in as admin:">
+               <VBox.margin>
+                  <Insets left="33.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="adminNameInGrades">
+               <VBox.margin>
+                  <Insets left="80.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+         </children></VBox>
+      <Label layoutX="325.0" layoutY="24.0" text="New Student Grades">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="264.0" layoutY="119.0" prefHeight="17.0" prefWidth="57.0" text="Math:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="264.0" layoutY="164.0" prefHeight="17.0" prefWidth="73.0" text="English:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="264.0" layoutY="205.0" prefHeight="17.0" prefWidth="57.0" text="Science:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="264.0" layoutY="243.0" prefHeight="17.0" prefWidth="50.0" text="History:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="mathGradeBtn" layoutX="345.0" layoutY="116.0" />
+      <TextField fx:id="englishGradeBtn" layoutX="345.0" layoutY="161.0" />
+      <TextField fx:id="scienceGradeBtn" layoutX="345.0" layoutY="202.0" />
+      <TextField fx:id="historyGradeBtn" layoutX="345.0" layoutY="240.0" />
+      <Button fx:id="addGradesBtn" layoutX="361.0" layoutY="296.0" mnemonicParsing="false" onAction="#addGrades" prefHeight="25.0" prefWidth="118.0" styleClass="addStudentFinalbtn" text="Add Grades" />
+      <Label fx:id="successfulGrades" alignment="CENTER" layoutX="285.0" layoutY="355.0" prefHeight="17.0" prefWidth="282.0" />
+   </children>
+</AnchorPane>

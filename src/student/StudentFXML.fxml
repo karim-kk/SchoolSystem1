@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="student.StudentController">
+   <children>
+      <Label alignment="CENTER" layoutX="31.0" layoutY="14.0" prefHeight="93.0" prefWidth="96.0" style="-fx-border-radius: 50px; -fx-border-color: Black;" text="KN" textFill="#282828">
+         <font>
+            <Font name="Book Antiqua" size="32.0" />
+         </font></Label>
+      <HBox layoutX="173.0" layoutY="22.0" prefHeight="380.0" prefWidth="428.0">
+         <children>
+            <TableView fx:id="gradesTable" prefHeight="380.0" prefWidth="420.0">
+              <columns>
+                  <TableColumn fx:id="IDColumn" prefWidth="92.0" text="ID" />
+                  <TableColumn fx:id="MathColumn" prefWidth="90.0" text="MATH" />
+                <TableColumn fx:id="EnglishColumn" prefWidth="86.0" text="ENGLISH" />
+                <TableColumn fx:id="ScienceColumn" prefWidth="73.0" text="SCIENCE" />
+                  <TableColumn fx:id="HistoryColumn" prefWidth="75.0" text="HISTORY" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <Button fx:id="refreshBtn" layoutX="15.0" layoutY="187.0" mnemonicParsing="false" onAction="#loadData" prefHeight="27.0" prefWidth="129.0" text="Refresh" />
+      <Label layoutX="31.0" layoutY="125.0" prefHeight="27.0" prefWidth="129.0" text="Welcome Back">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="greetingBtn" alignment="CENTER" layoutX="16.0" layoutY="150.0" prefHeight="27.0" prefWidth="129.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

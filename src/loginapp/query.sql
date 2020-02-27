@@ -1,0 +1,1 @@
+SELECT * FROM login where Username = ? and Password = ? and Type = ? ;

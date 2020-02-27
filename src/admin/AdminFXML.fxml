@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.AdminController">
+   <children>
+      <HBox layoutX="173.0" layoutY="22.0" prefHeight="380.0" prefWidth="428.0">
+         <children>
+            <TableView fx:id="studentTable" prefHeight="381.0" prefWidth="427.0">
+              <columns>
+                <TableColumn fx:id="IDColumn" prefWidth="102.0" text="ID" />
+                <TableColumn fx:id="FirstColumn" prefWidth="109.0" text="First Name" />
+                  <TableColumn fx:id="LastColumn" prefWidth="101.0" text="Last Name" />
+                  <TableColumn fx:id="DOBColumn" prefWidth="114.0" text="DOB" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <Label layoutX="373.0" layoutY="6.0" text="Students" />
+      <Label fx:id="greetingBtn" alignment="CENTER" layoutX="16.0" layoutY="139.0" prefHeight="25.0" prefWidth="124.0">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="27.0" layoutY="114.0" text="Welcome back">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+       <Label alignment="CENTER" layoutX="31.0" layoutY="14.0" prefHeight="93.0" prefWidth="96.0" style="-fx-border-color: #010000; -fx-border-radius: 50px;" text="KN">
+           <font>
+               <Font name="Book Antiqua" size="32.0" />
+           </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+       </Label>
+      <Button fx:id="addStudentBtn" layoutX="21.0" layoutY="229.0" mnemonicParsing="false" onAction="#openAddStudentPage" prefHeight="29.0" prefWidth="124.0" text="Add a Student" />
+      <Button fx:id="refreshBtn" layoutX="21.0" layoutY="186.0" mnemonicParsing="false" onAction="#loadData" prefHeight="29.0" prefWidth="124.0" text="Refresh" />
+       
+   </children>
+
+</AnchorPane>

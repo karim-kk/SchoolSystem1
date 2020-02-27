@@ -1,0 +1,28 @@
+.root{
+-fx-background-image:url('background.jpg');
+-fx-background-size:cover;
+}
+
+.signinbtn{
+-fx-background-color: transparent;
+-fx-text-fill: white;
+-fx-border-width: 0px 0px 2px 0px;
+-fx-border-color: white;
+
+}
+.signinbtn:hover{
+-fx-background-color: transparent;
+-fx-text-fill: white;
+
+-fx-border-width: 0px 0px 2px 0px;
+-fx-border-color: black;
+
+}
+.combobox{
+-fx-background-color: white;
+-fx-background-radius: 50px;
+-fx-prompt-text-fill: white;
+-fx-text-fill: white;
+
+
+}
