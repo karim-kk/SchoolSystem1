@@ -52,6 +52,9 @@ public class AdminController implements Initializable {
     private Button addStudentBtn;
     @FXML
     private Button refreshBtn;
+    @FXML
+    private Button opeChangeGradesBtn;
+
 
     public static String greetingString;
 
@@ -72,6 +75,8 @@ public class AdminController implements Initializable {
     private Label adminName;
     @FXML
     private TextField PassAddBtn;
+    @FXML
+    private Label addStudentGreeting;
 
     @FXML
     private TextField mathGradeBtn;
@@ -90,6 +95,24 @@ public class AdminController implements Initializable {
 
 
     public static String IDForGrades;
+    @FXML
+    private TextField IDChange;
+    @FXML
+    private TextField MathChange;
+    @FXML
+    private TextField EnglishChange;
+    @FXML
+    private TextField ScienceChange;
+    @FXML
+    private TextField HistoryChange;
+    @FXML
+    private Label changeGradesGreeting;
+    @FXML
+    private Button changeGradesFinalBtn;
+    @FXML
+    private Label successfullChangeBtn;
+
+
 
 
 
@@ -148,7 +171,6 @@ public class AdminController implements Initializable {
         try{
 
             Connection connection = dbConnection.getConnection();
-            String var = "Students";
             PreparedStatement ps = connection.prepareStatement("INSERT INTO students (ID,First,Last,DOB) VALUES (?,?,?,?)");
 
             IDForGrades = this.IDaddBtn.getText();
@@ -181,6 +203,7 @@ public class AdminController implements Initializable {
 
 
             this.SuccessfulEntryBtn.setText("Successful entry, please close this window and hit refresh");
+
         }catch (SQLException ex){
             System.out.println("ERROR AdminController addStudent " + ex );
             ex.printStackTrace();
@@ -217,6 +240,7 @@ public class AdminController implements Initializable {
            addStage.setTitle("Add Student");
            addStage.setResizable(false);
            addStage.show();
+           this.addStudentGreeting.setText(greetingString);
        }
        catch (IOException ex) {
            System.out.println("ERROR AdminController openAddPage" + ex);
@@ -235,6 +259,7 @@ public class AdminController implements Initializable {
             addStage.setTitle("New Student Grades");
             addStage.setResizable(false);
             addStage.show();
+            this.adminNameInGrades.setText(greetingString);
         }
         catch (IOException ex) {
             System.out.println("ERROR AdminController openAddPage" + ex);
@@ -263,6 +288,48 @@ public class AdminController implements Initializable {
         }
 
     }
+    public void changeGradesPage(){
+        try {
+            Stage addStage = new Stage();
+            FXMLLoader changeGradesLoader = new FXMLLoader();
+            Pane changeGradesRoot = (Pane) changeGradesLoader.load(getClass().getResource("/admin/changeGrades.fxml").openStream());
+            AdminController adminController = (AdminController) changeGradesLoader.getController();
+
+            Scene changeGradesScene = new Scene(changeGradesRoot);
+            addStage.setScene(changeGradesScene);
+            addStage.setTitle("Change Student Grades");
+            addStage.setResizable(false);
+            addStage.show();
+        }
+        catch (IOException ex) {
+            System.out.println("ERROR AdminController changeGradesPage" + ex);
+            ex.printStackTrace();
+        }
+    }
+
+    public void changeGrades(){
+      try{
+        Connection connection = dbConnection.getConnection();
+        //PreparedStatement pd = connection.prepareStatement("INSERT INTO grades (math,english,science,history) VALUES (?,?,?,?) Where ID =" + IDChange.getText() );
+        PreparedStatement pd = connection.prepareStatement("UPDATE grades SET math=?, english=?, science=?, history=? WHERE ID =" + IDChange.getText());
+        pd.setString(1,MathChange.getText());
+        pd.setString(2,EnglishChange.getText());
+        pd.setString(3,ScienceChange.getText());
+        pd.setString(4,HistoryChange.getText());
+
+        pd.execute();
+        pd.close();
+        connection.close();
+        this.successfullChangeBtn.setText("The Grades were changes successfully!");
+
+      }catch (SQLException ex) {
+          System.out.println("ERROR AdminController changeGrades " + ex);
+          ex.printStackTrace();
+      }
+    }
+
+
+
 
 }
 

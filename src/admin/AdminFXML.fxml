@@ -38,6 +38,7 @@
        </Label>
       <Button fx:id="addStudentBtn" layoutX="21.0" layoutY="229.0" mnemonicParsing="false" onAction="#openAddStudentPage" prefHeight="29.0" prefWidth="124.0" text="Add a Student" />
       <Button fx:id="refreshBtn" layoutX="21.0" layoutY="186.0" mnemonicParsing="false" onAction="#loadData" prefHeight="29.0" prefWidth="124.0" text="Refresh" />
+      <Button fx:id="opeChangeGradesBtn" layoutX="21.0" layoutY="268.0" mnemonicParsing="false" onAction="#changeGradesPage" prefHeight="29.0" prefWidth="124.0" text="Change Grades" />
        
    </children>
 

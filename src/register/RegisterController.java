@@ -53,11 +53,12 @@ public class RegisterController implements Initializable {
         try {
             if(((logintype) this.comboBoxRegisterBtn.getValue()).toString().equals("Student")) {
                 Connection connection = dbConnection.getConnection();
-                PreparedStatement ps = connection.prepareStatement("INSERT INTO login (Username,Password,Type) VALUES(?,?,?)");
+                PreparedStatement ps = connection.prepareStatement("INSERT INTO login (ID,Name,Password,Type) VALUES(?,?,?,?)");
 
                 ps.setString(1, this.IDRegisterBtn.getText());
-                ps.setString(2, this.passwordRegisterBtn.getText());
-                ps.setString(3, ((logintype) this.comboBoxRegisterBtn.getValue()).toString());
+                ps.setString(2, this.FirstRegisterBtn.getText());
+                ps.setString(3, this.passwordRegisterBtn.getText());
+                ps.setString(4, ((logintype) this.comboBoxRegisterBtn.getValue()).toString());
 
                 ps.execute();
                 ps.close();

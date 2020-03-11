@@ -1,6 +1,7 @@
 package loginapp;
 
 import admin.AdminController;
+import dbUtil.dbConnection;
 import register.RegisterController;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -18,6 +19,8 @@ import student.StudentController;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 
@@ -64,8 +67,16 @@ public class LoginController implements Initializable {
                 Stage stage = (Stage)this.signinbtn.getScene().getWindow();
                 stage.close();
 
-                whoIsLoggedIn = IDbtn.getText();
-                System.out.println(whoIsLoggedIn);
+                //Use this to have name shown in dashboard
+                Connection connection = dbConnection.getConnection();
+
+                ResultSet rs = connection.createStatement().executeQuery("SELECT Name FROM login Where ID =" + IDbtn.getText() );
+                whoIsLoggedIn = rs.getString(1);
+
+                //Use this to have ID shown on dashboard
+                //whoIsLoggedIn = IDbtn.getText();
+                //System.out.println(whoIsLoggedIn);
+
                 switch(((logintype)this.comboboxbtn.getValue()).toString()){
                     case "Admin":
                         adminLogin(whoIsLoggedIn);
@@ -75,7 +86,7 @@ public class LoginController implements Initializable {
                         break;
 
 
-                }
+                }connection.close();
             }else{
                 this.IDbtn.setText(""); //clearing the form
                 this.passwordbtn.setText(""); //clearing the form
