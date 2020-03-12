@@ -14,7 +14,8 @@ If the user chooses to register, they are only allowed to register as a student.
 
 ADMIN DASHBOARD DESCRIPTION:
 Once the user is logged in as an admin, they have access to view all the students that are currently in the school.
-Admin also can add a new student and new grades into the school's database.
+Admin also can add a new student and new grades into the school's database. 
+(new feature) Admin can also change the grades of existing students.
 
 
 
