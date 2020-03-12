@@ -20,5 +20,6 @@ Admin also can add a new student and new grades into the school's database.
 
 
 
+
 STUDENT DASHBOARD DESCRIPTION:
 Once the user is logged in as a student, all they have access to is their own grades.
